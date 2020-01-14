@@ -1,0 +1,35 @@
+{
+    "name": "eximiaweb/payment",
+    "description": "Wrapper de integra\u0000\u0000o com Formas de pagamento",
+    "type": "library",
+    "config" : {
+        "platform": {
+            "php": "7.1.3"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rodrigo Teixeira Andreotti",
+            "email": "ro.andriotti@gmail.com"
+        }
+    ],
+    "psr-4": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Payment\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PaymentTest\\": "tests/src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "paypal/rest-api-sdk-php": "*",
+        "pagseguro/pagseguro-php-sdk": "@stable",
+        "php": "7.1.3"
+    }
+}

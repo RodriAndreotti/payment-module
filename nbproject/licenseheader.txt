@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Este módulo foi desenvolvido por EximiaWeb
+<#if licenseLast??>
+${licenseLast}
+</#if>
