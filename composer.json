@@ -1,6 +1,6 @@
 {
     "name": "eximiaweb/payment",
-    "description": "Wrapper de integra\u0000\u0000o com Formas de pagamento",
+    "description": "Módulo para pagamentos muiti-gateway que abstrai as particularidades de cada api proprietária em uma interface comum, simplificando a implementação de vários Gateways de pagamento ",
     "type": "library",
     "config" : {
         "platform": {
