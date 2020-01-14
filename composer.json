@@ -31,6 +31,6 @@
     "require": {
         "paypal/rest-api-sdk-php": "*",
         "pagseguro/pagseguro-php-sdk": "@stable",
-        "php": ">=7.1.3"
+        "php": "^7.1.3"
     }
 }
