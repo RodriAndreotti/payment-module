@@ -2,3 +2,4 @@ PayPal.log
 composer.phar
 /vendor/
 composer.lock
+/nbproject/
