@@ -1,4 +1,5 @@
 PayPal.log
+PagSeguro.log
 composer.phar
 /vendor/
 composer.lock
