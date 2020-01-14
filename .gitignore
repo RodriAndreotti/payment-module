@@ -1,2 +1,4 @@
-/PayPal.log
+PayPal.log
+composer.phar
 /vendor/
+composer.lock
