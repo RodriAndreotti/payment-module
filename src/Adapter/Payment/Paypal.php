@@ -63,11 +63,11 @@ class Paypal implements PaymentAdapterInterface
         $this->itemList = new \PayPal\Api\ItemList();
     }
 
-    public function addProduct(\Payment\Generic\ProductInterface $product)
+    public function addProduct(\Payment\Generic\ProductInterface $product, $currency = 'BRL')
     {
         $item = new \PayPal\Api\Item();
         $item
-                ->setCurrency('BRL')
+                ->setCurrency($currency)
                 ->setName($product->getDescription())
                 ->setDescription($product->getDescription())
                 ->setQuantity($product->getCount())

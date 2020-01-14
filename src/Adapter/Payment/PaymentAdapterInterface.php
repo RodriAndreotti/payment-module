@@ -12,7 +12,7 @@ namespace Payment\Adapter\Payment;
  */
 interface PaymentAdapterInterface
 {
-    public function addProduct(\Payment\Generic\ProductInterface $product);
+    public function addProduct(\Payment\Generic\ProductInterface $product, $currency = 'BRL');
     public function setPayer(\Payment\Generic\Payer $payer);
     public function setReference(string $codReferenc);
     

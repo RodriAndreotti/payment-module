@@ -51,8 +51,11 @@ class Pagseguro implements PaymentAdapterInterface
         $this->paymentClient->setNotificationUrl($notificationUrl);
     }
 
-    public function addProduct(\Payment\Generic\ProductInterface $product)
+    public function addProduct(\Payment\Generic\ProductInterface $product, $currency = 'BRL')
     {
+        if($currency != 'BRL') {
+            throw new CurrencyNotSupported('O PagSeguro só aceita pagamento em Real Brasileiro');
+        }
         $this->paymentClient->addItems()->withParameters(
                 $product->getId(),
                 $product->getDescription(),
