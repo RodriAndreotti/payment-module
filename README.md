@@ -40,9 +40,9 @@ Módulo para pagamentos muiti-gateway que abstrai as particularidades de cada ap
     $gateway->addProduct($produto, 'BRL');
 
     // Define o cliente
-    gateway->setPayer($cliente);
+    $gateway->setPayer($cliente);
     
     // Chama o método de pagamento
-    $paymentUrl = gateway->pay();
+    $paymentUrl = $gateway->pay();
 
 O retorno do método pay() será a url de pagamento para a qual o usuário deverá ser redirecionado para realizar o pagamento.
