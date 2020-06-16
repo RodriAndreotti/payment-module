@@ -25,10 +25,10 @@ class PaymentFactory
     {
         switch ($method) {
             case \Payment\Adapter\AdapterType::PAGSEGURO:
-                $adapter = new \Payment\Adapter\Payment\Pagseguro($config);
+                $adapter = new \Payment\Adapter\Payment\Pagseguro($this->config);
                 break;
             case \Payment\Adapter\AdapterType::PAYPAL:
-                $adapter = new \Payment\Adapter\Payment\Paypal($config);
+                $adapter = new \Payment\Adapter\Payment\Paypal($this->config);
                 break;
             default:
                 throw new PaymentMethodNotSupported('Payment Gateway not supported', 4557);
