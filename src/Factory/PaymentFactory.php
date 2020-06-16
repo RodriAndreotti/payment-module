@@ -21,7 +21,7 @@ class PaymentFactory
         $this->config = $config;
     }
 
-    public function createPaymentWrapper(\string $method)
+    public function createPaymentWrapper($method)
     {
         switch ($method) {
             case \Payment\Adapter\AdapterType::PAGSEGURO:
