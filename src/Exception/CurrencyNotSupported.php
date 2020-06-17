@@ -13,7 +13,7 @@ namespace Payment\Exception;
  */
 class CurrencyNotSupported extends \RuntimeException
 {
-    public function __construct(string $message = "", int $code = 0): \Exception
+    public function __construct(string $message = "", int $code = 0)
     {
         return parent::__construct($message, $code);
     }

@@ -19,13 +19,9 @@ class PagseguroTest extends \PHPUnit\Framework\TestCase
      */
     protected function setUp()
     {
-        $conf = array(
-            'email' => 'ro.andriotti@gmail.com',
-            'token' => '5FB2E8886F634879A56207D4F04C5839',
-            'environment' => 'sandbox',
-        );
+        $conf = require getcwd() . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config_file.php';
 
-        $this->object = new Pagseguro($conf['environment'], $conf['email'], $conf['token']);
+        $this->object = new Pagseguro($conf['pagseguro_environment'], $conf['pagseguro_email'], $conf['pagseguro_token']);
         
     }
 
@@ -52,8 +48,8 @@ class PagseguroTest extends \PHPUnit\Framework\TestCase
      */
     public function testReceiveWithParams()
     {
-        $_POST['notificationCode'] = 'teste';
-        $_POST['notificationType'] = 'teste';
+        $_POST['notificationCode'] = '3FD8CD9964BE64BEDDA8846E0FA12752002E';
+        $_POST['notificationType'] = 'transaction';
         
         $response = $this->object->receive();
     }

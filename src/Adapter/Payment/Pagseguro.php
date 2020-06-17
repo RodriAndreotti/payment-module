@@ -33,7 +33,7 @@ class Pagseguro implements PaymentAdapterInterface
         \PagSeguro\Configuration\Configure::setEnvironment($enviroment); //production or sandbox
         \PagSeguro\Configuration\Configure::setCharset('UTF-8'); // UTF-8 or ISO-8859-1
         \PagSeguro\Configuration\Configure::setLog(true, __DIR__ . '/../../Pagseguro.log');
-        
+
         \PagSeguro\Configuration\Configure::setAccountCredentials(
                 $email,
                 $token
@@ -53,7 +53,7 @@ class Pagseguro implements PaymentAdapterInterface
 
     public function addProduct(\Payment\Generic\ProductInterface $product, $currency = 'BRL')
     {
-        if($currency != 'BRL') {
+        if ($currency != 'BRL') {
             throw new CurrencyNotSupported('O PagSeguro só aceita pagamento em Real Brasileiro');
         }
         $this->paymentClient->addItems()->withParameters(

@@ -19,15 +19,9 @@ class PaypalTest extends \PHPUnit\Framework\TestCase
      */
     protected function setUp()
     {
-        $conf = array(
-            'CliendID' => 'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS',
-            'ClientSecret' => 'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL',
-            'environment' => 'sandbox',
-            'nome' => 'EximiaControl',
-            'version' => '1.0'
-        );
+        $conf = require getcwd() . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config_file.php';
 
-        $this->object = new Paypal('http://localhost.com', 'http://localhost.com', $conf['environment'], $conf['CliendID'], $conf['ClientSecret'], uniqid());
+        $this->object = new Paypal($conf['redirectUrl'], $conf['notificationUrl'], $conf['paypal_environment'], $conf['paypal_CliendID'], $conf['paypal_ClientSecret']);
     }
 
     /**
@@ -95,6 +89,8 @@ class PaypalTest extends \PHPUnit\Framework\TestCase
         $product2->getPrice()->willReturn(120.00);
         $product2->getDescription()->willReturn('Memória DDR4');
         $product2->getCount()->willReturn(2);
+        
+        $this->object->setReference(uniqid());
 
 
         $this->assertInstanceOf(Paypal::class, $this->object->addProduct($product1->reveal()));

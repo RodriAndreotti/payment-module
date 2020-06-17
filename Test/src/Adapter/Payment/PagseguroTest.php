@@ -19,15 +19,15 @@ class PagseguroTest extends \PHPUnit\Framework\TestCase
      */
     protected function setUp()
     {
-        $conf = array(
-            'email' => 'ro.andriotti@gmail.com',
-            'token' => '5FB2E8886F634879A56207D4F04C5839',
-            'environment' => 'sandbox',
-            'nome' => 'EximiaControl',
-            'version' => '1.0'
-        );
+        $conf = require getcwd() . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config_file.php';
 
-        $this->object = new Pagseguro('localhost', 'localhost', $conf['environment'], $conf['email'], $conf['token'], $conf['nome'], $conf['version']);
+        $this->object = new Pagseguro($conf['redirectUrl'], 
+                $conf['notificationUrl'], 
+                $conf['pagseguro_environment'], 
+                $conf['pagseguro_email'], 
+                $conf['pagseguro_token'], 
+                $conf['pagseguro_nome'], 
+                $conf['version']);
     }
 
     /**
@@ -103,6 +103,7 @@ class PagseguroTest extends \PHPUnit\Framework\TestCase
         $paymentUrl = $this->object->pay();
 
         $this->assertInternalType('string', $paymentUrl);
+        
         $this->assertTrue(filter_var($paymentUrl, FILTER_VALIDATE_URL, array('flags' => array(
                 FILTER_FLAG_PATH_REQUIRED,
                 FILTER_FLAG_QUERY_REQUIRED

@@ -4,3 +4,4 @@ composer.phar
 /vendor/
 composer.lock
 /nbproject/
+/Test/src/config_file.php

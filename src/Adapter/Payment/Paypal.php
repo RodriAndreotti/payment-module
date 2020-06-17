@@ -38,9 +38,9 @@ class Paypal implements PaymentAdapterInterface
      */
     private $invoiceNumber;
 
-    public function __construct($redirectUrl, $cancelUrl, $enviroment, $cliendID, $clientSecret, $invoiceNumber = null)
+    public function __construct($redirectUrl, $cancelUrl, $enviroment, $cliendID, $clientSecret)
     {
-        $this->invoiceNumber = $invoiceNumber;
+
         $redirectUrls = new \PayPal\Api\RedirectUrls();
         $redirectUrls
                 ->setReturnUrl($redirectUrl)
@@ -164,7 +164,7 @@ class Paypal implements PaymentAdapterInterface
 
     public function setReference(string $codReference)
     {
-        //$this->payment->
+        $this->invoiceNumber = $codReference;
     }
 
 }
