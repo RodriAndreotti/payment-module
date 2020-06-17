@@ -16,25 +16,25 @@ Módulo para pagamentos muiti-gateway que abstrai as particularidades de cada ap
 ### Configuração para o os meios de pagamento
 
 
-return array(
-    // PagSeguro
-    'pagseguro_email' => 'email_assigned_to_your_account',
-    'pagseguro_token' => 'your_app_token',
-    'pagseguro_environment' => 'sandbox', // or production
-    
-    
-    // Paypal
-    'paypal_cancelUrl'  =>  'url_to_redirect_on_cancel_button_clicked',
-    'paypal_CliendID' => 'your_client_id',
-    'paypal_ClientSecret' => 'your_client_secret',
-    'paypal_environment' => 'sandbox', // or production
-    
-    // General
-    'redirectUrl' => 'url_to_redirect_after_payment',
-    'notificationUrl' => 'url_to_notify_payment_status_changes',
-    'nome' => 'your_app_name',
-    'version' => 'your_app_version',
-);
+    return array(
+        // PagSeguro
+        'pagseguro_email' => 'email_assigned_to_your_account',
+        'pagseguro_token' => 'your_app_token',
+        'pagseguro_environment' => 'sandbox', // or production
+
+
+        // Paypal
+        'paypal_cancelUrl'  =>  'url_to_redirect_on_cancel_button_clicked',
+        'paypal_CliendID' => 'your_client_id',
+        'paypal_ClientSecret' => 'your_client_secret',
+        'paypal_environment' => 'sandbox', // or production
+
+        // General
+        'redirectUrl' => 'url_to_redirect_after_payment',
+        'notificationUrl' => 'url_to_notify_payment_status_changes',
+        'nome' => 'your_app_name',
+        'version' => 'your_app_version',
+    );
 
 ### Chamando o método de pagamento
 
