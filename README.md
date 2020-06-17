@@ -13,23 +13,28 @@ Módulo para pagamentos muiti-gateway que abstrai as particularidades de cada ap
 - Implemente a interface \Payment\Generic\ProductInterface nos produtos que poderão ser pagos através do módulo
 - Implemente a interface \Payment\Generic\Payer em sua classe de cliente
 
-### Configuração para o PagSeguro
+### Configuração para o os meios de pagamento
 
-    $conf = array(
-        'email' => 'seu_email',
-        'token' => 'seu_token',
-        'environment' => 'sandbox',
-        'nome' => 'EximiaControl',
-        'version' => '1.0'
-    );
 
-### Configuração para o PayPal
-
-    $conf = array(
-        'CliendID' => 'seu_client_ID',
-        'ClientSecret' => 'seu_client_secret',
-        'environment' => 'sandbox',
-    );
+return array(
+    // PagSeguro
+    'pagseguro_email' => 'email_assigned_to_your_account',
+    'pagseguro_token' => 'your_app_token',
+    'pagseguro_environment' => 'sandbox', // or production
+    
+    
+    // Paypal
+    'paypal_cancelUrl'  =>  'url_to_redirect_on_cancel_button_clicked',
+    'paypal_CliendID' => 'your_client_id',
+    'paypal_ClientSecret' => 'your_client_secret',
+    'paypal_environment' => 'sandbox', // or production
+    
+    // General
+    'redirectUrl' => 'url_to_redirect_after_payment',
+    'notificationUrl' => 'url_to_notify_payment_status_changes',
+    'nome' => 'your_app_name',
+    'version' => 'your_app_version',
+);
 
 ### Chamando o método de pagamento
 
