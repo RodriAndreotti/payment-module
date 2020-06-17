@@ -16,7 +16,7 @@ Módulo para pagamentos muiti-gateway que abstrai as particularidades de cada ap
 ### Configuração para o os meios de pagamento
 
 
-    return array(
+    $config = array(
         // PagSeguro
         'pagseguro_email' => 'email_assigned_to_your_account',
         'pagseguro_token' => 'your_app_token',
